@@ -87,7 +87,8 @@
   </nav>
   <div id="app">
     <h1>Counting Fish Web Application</h1>
-    <img id="bg" width="600px" class="responsive" src="{{ url_for('video_feed') }}"><br><br>
+    <img id="video" width="600px" class="responsive" src="{{ url_for('video_feed') }}"></img><br><br>
+    <!-- <script src="{{ url_for('static', filename='main.js') }}"></script> -->
     <form action="/" method="POST">
       <input type="submit" class="btn btn-primary" value="count" name="test">
     </form>
