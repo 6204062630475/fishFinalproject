@@ -22,14 +22,14 @@ def create_count(a):
     try:
         user = {"count":a,"Date":now}
         dbResponse = db.count.insert_one(user)
-        print(dbResponse.inserted_id)
-        return Response(
-            response = json.dumps({"count":"10",
-                        "id":f"{dbResponse.inserted_id}"
-                        }),
-            status=200,
-            mimetype="application/json"
-        )
+        # print(dbResponse.inserted_id)
+        # return Response(
+        #     response = json.dumps({"count":"10",
+        #                 "id":f"{dbResponse.inserted_id}"
+        #                 }),
+        #     status=200,
+        #     mimetype="application/json"
+        # )
     except Exception as ex:
         print(ex)
 #-------------------------------------------

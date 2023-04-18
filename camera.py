@@ -7,15 +7,17 @@ area=[(80,15),(80,458),(600,458),(600,15)]
 class VideoCamera(object):
     def __init__(self):
 
-        self.video = cv2.VideoCapture(0)    
+        self.video = cv2.VideoCapture(0)   
+        # self.video.set(cv2.CAP_PROP_FRAME_WIDTH,480.0)
+        # self.video.set(cv2.CAP_PROP_FRAME_HEIGHT,640.0) 
 
     def __del__(self):
         self.video.release()
     
     def get_frame(self):
         success, image = self.video.read()
-        if not success:
-            assert not isinstance(image,type(None)), 'frame not found'
+        # if not success:
+        #     assert not isinstance(image,type(None)), 'frame not found'
         results=model(image)
         # a=np.squeeze(results.render());;;
         list=[]

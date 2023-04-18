@@ -27,13 +27,7 @@ def index():
 @app.route('/', methods=['POST'])
 def button():
     create_count(geta(VideoCamera()))
-    data = []
-    for doc in mongo.db.count.find():
-        data.append({
-            'count': doc['count'],
-            'Date': doc['Date'],
-        })
-    return render_template('index.html', data=data)
+    return render_template('index.html')
 
 def gen(camera):
     while True:
