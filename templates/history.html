@@ -20,7 +20,8 @@
             margin-left: auto;
             margin-right: auto;
             display: block;
-            width: 800px;
+            width: 50%;
+            height: 50%;
         }
     </style>
 </head>
@@ -89,8 +90,98 @@
         </div>
     </nav>
     <!-- ... -------------------------------------->
-    <br><br>
     <Center>
+        <!----กราฟวัน--------------------------------------------------------------------------------->
+        <br><br>
+        <form>
+            <select name="yearDayChart" id="year" class="btn btn-secondary dropdown-toggle">
+                <option hidden value="0">Year</option>
+                <option value="-1">All Year</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+            <select name="monthDayChart" id="month" class="btn btn-secondary dropdown-toggle">
+                <option hidden value="0">Month</option>
+                <option value="-1">All Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <select name="dayDayChart" id="day" class="btn btn-secondary dropdown-toggle">
+                <option hidden value="0">Day</option>
+                <option value="-1">All Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+
+            <input type="submit" class="btn btn-primary" value="Show">
+        </form>
+        <br><br>
+        <canvas id="DayChart" style="width:100%;max-width:1200px"></canvas><br><br>
+        <!---กราฟเดือนกราฟปี---------------------------------------------------------------------------------->
+        <form>
+            <select name="yearMonthChart" class="btn btn-secondary dropdown-toggle" id="defData">
+                <option hidden value="0">Select Year</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+            <input type="submit" class="btn btn-primary" value="Show">
+        </form><br>
+        <canvas id="MonthChart" style="width:100%;max-width:800px"></canvas><br><br>
+        <!------------------------------------------------------------------------------------>
+        <canvas id="YearChart" style="width:100%;max-width:800px"></canvas><br><br>
+        <!------------------------------------------------------------------------------------>
+        <!-- ################################################################################################################################################-->
+        <!-- <canvas id="myChart" style="width:600px"></canvas>
+        <canvas id="myChart" style="width:600px"></canvas> -->
+
+        <!-------ตาราง----------------------------------------------------------------------------->
         <form>
             <!-- <select name="num" class="btn btn-secondary dropdown-toggle">
                 <option value="5" {% if num==5 %}selected{% endif %}>5 latest</option>
@@ -122,8 +213,42 @@
                 <option value="11">November</option>
                 <option value="12">December</option>
             </select>
-
-            <input type="submit" class="btn btn-dark" value="Show">
+            <select name="day" id="day" class="btn btn-secondary dropdown-toggle">
+                <option hidden value="0">Day</option>
+                <option value="-1">All Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <input type="submit" class="btn btn-primary" value="Show">
         </form>
     </Center>
 
@@ -147,22 +272,52 @@
             </table>
         </form><br><br>
         <!-- ------------------------------------------------------ -->
-        <form>
-            <select name="graph" class="btn btn-secondary dropdown-toggle" id="defData">
-                <option hidden value="0">Select Year</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-            </select>
-            <input type="submit" class="btn btn-dark" value="Show">
-        </form><br><br>
-        <canvas id="myChart" style="width:100%"></canvas>
 
+        <!-- ------------------------------------------------------ -->
         <script>
-            fetch('/parse')
+            var ctx0 = document.getElementById('DayChart').getContext('2d');
+            var ctx1 = document.getElementById('MonthChart').getContext('2d');
+            var ctx2 = document.getElementById('YearChart').getContext('2d');
+            fetch('/parseDay')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    const labels = data.map(d => d.Date);
+                    const values = data.map(d => d.count);
+                    var myChart = new Chart(ctx0, {
+                        type: "line",
+                        data: {
+                            labels: labels,
+                            title: "Date&Time",
+                            datasets: [{
+                                labels: "",
+                                fill: false,
+                                lineTension: 0,
+                                backgroundColor: "rgba(0,0,255,1.0)",
+                                borderColor: "red",
+                                data: values
+                            }]
+                        },
+                        options: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: "จำนวนปลาหางนกยูงรายวัน"
+                            },
+                            scales: {
+                                xAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Date'
+                                    }
+                                }],
+                                yAxes: [{ ticks: { min: 0, max: 300 } }],
+                            }
+                        }
+                    });
+                })
+                ;
+            fetch('/parseMonth')
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
@@ -170,27 +325,84 @@
                     const values = data.map(d => d.average);
                     console.log(labels)
                     console.log(values)
-                    new Chart("myChart", {
+                    var myChart = new Chart(ctx1, {
                         type: "line",
                         data: {
                             labels: labels,
+                            title: "Month",
                             datasets: [{
+                                labels: "",
                                 fill: false,
-                                lineTension: 0,
+                                // lineTension: 0,
                                 backgroundColor: "rgba(0,0,255,1.0)",
-                                borderColor: "rgba(0,0,255,0.1)",
+                                borderColor: "#6E7EF5",
                                 data: values
                             }]
                         },
                         options: {
                             legend: { display: false },
+                            title: {
+                                display: true,
+                                text: "จำนวนปลาหางนกยูงเฉลี่ยรายเดือน"
+                            },
                             scales: {
-
+                                xAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Month'
+                                    }
+                                }],
                                 yAxes: [{ ticks: { min: 0, max: 300 } }],
                             }
                         }
                     });
-                });
+                    //myChart.canvas.style.height = '800px';
+                    // myChart.canvas.parentNode.style.width = '800px';
+                })
+                ;
+            fetch('/parseYear')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    const labels = data.map(d => d._id);
+                    const values = data.map(d => d.average);
+                    console.log(labels)
+                    console.log(values)
+                    var myChart = new Chart(ctx2, {
+                        type: "line",
+                        data: {
+                            labels: labels,
+                            title: "Year",
+                            datasets: [{
+                                labels: "",
+                                fill: false,
+                                // lineTension: 0,
+                                backgroundColor: "rgba(0,0,255,1.0)",
+                                borderColor: "lightgreen",
+                                data: values
+                            }]
+                        },
+                        options: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: "จำนวนปลาหางนกยูงเฉลี่ยรายปี"
+                            },
+                            scales: {
+                                xAxes: [{
+                                    scaleLabel: {
+                                        display: true,
+                                        labelString: 'Year'
+                                    }
+                                }],
+                                yAxes: [{ ticks: { min: 0, max: 300 } }],
+                            }
+                        }
+                    });
+                    //myChart.canvas.style.height = '800px';
+                    // myChart.canvas.parentNode.style.width = '800px';
+                })
+                ;
         </script>
     </div>
 </body>
