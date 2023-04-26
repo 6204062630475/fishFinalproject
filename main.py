@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Response, request, jsonify, session
 from camera import VideoCamera
-from server import create_count
+from datetime import datetime
 from pymongo import MongoClient
 from flask_pymongo import PyMongo
 
@@ -26,6 +26,15 @@ def index():
 def button():
     create_count(geta(VideoCamera()))
     return render_template('index.html')
+
+def create_count(a):
+    now = datetime.now()
+    try:
+        user = {"count":a,"Date":now}
+        db.count.insert_one(user)
+
+    except Exception as ex:
+        print(ex)
 
 def geta(camera):
     while True:
